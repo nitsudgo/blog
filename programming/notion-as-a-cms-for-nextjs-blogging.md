@@ -1,5 +1,5 @@
 ---
-slug: web-development/notion-as-a-cms-for-nextjs-blogging
+slug: programming/notion-as-a-cms-for-nextjs-blogging
 created_at: 2023-11-12 19:05
 is_template: "0"
 featured_image: 
