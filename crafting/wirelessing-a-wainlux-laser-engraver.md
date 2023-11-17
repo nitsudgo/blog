@@ -1,5 +1,5 @@
 ---
-slug: crafting/wirelessing-a-wainlux-laser-engraver
+slug: crafting/Wirelessing-A-Wainlux-Laser-Engraver
 created_at: 2023-11-12 16:39
 is_template: "0"
 featured_image: img/wirelessing-a-wainlux-laser-engraver/wainlux-header.jpg
