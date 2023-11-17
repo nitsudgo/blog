@@ -2,7 +2,7 @@
 slug: programming/Notion-As-A-CMS-For-NextJS-Blogging
 created_at: 2023-11-12 19:05
 is_template: "0"
-featured_image: 
+featured_image: img/Notion-As-A-CMS-For-NextJS-Blogging/notion-cms-header.png
 title: Notion as a CMS for NextJS Blogging
 ---
 *I’ve been looking for a simple way to integrate a blog and rudimentary content management system into my Next.js web application. After playing around with a few options such as scraping from a separate Jekyll static blog, I finally discovered, and settled on using Notion and its Publish to Web feature. By combining the flexibility and ease of writing in Notion with the `react-notion-x` package, I can finally make and manage my content without worrying too much about publishing and post CRUD infrastructure.*
