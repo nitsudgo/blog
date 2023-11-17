@@ -7,7 +7,8 @@ title: Notion as a CMS for NextJS Blogging
 ---
 *I’ve been looking for a simple way to integrate a blog and rudimentary content management system into my Next.js web application. After playing around with a few options such as scraping from a separate Jekyll static blog, I finally discovered, and settled on using Notion and its Publish to Web feature. By combining the flexibility and ease of writing in Notion with the `react-notion-x` package, I can finally make and manage my content without worrying too much about publishing and post CRUD infrastructure.*
 
-> This is an old post migrated from ancient times. Whilst the content should still be okay, a lot of things have changed since then. For one, I don't use Notion as a CMS anymore!
+> [!warning] This is an old post migrated from ancient times. Whilst the content should still be okay, a lot of things have changed since then. For one, I don't use Notion as a CMS anymore!
+
 # Introduction
 
 In case you haven't already noticed, the entire blog portion of this website (i.e. the blog post listing page, and the blog posts themselves) has been crafted in [Notion](https://www.notion.so/). I first heard of Notion when some colleagues brought it up briefly during a work discussion but I didn't think much of it at the time. At some point during my efforts to improve self productivity, I decided to take a closer look at it to see if it could boost my efficiency and organizational planning skills. I was quite impressed at how intuitive Notion was and how easy it was to get started creating things like Kanban boards, habit trackers, write-ups, documentation, and more.
@@ -28,7 +29,7 @@ Not to mention it's way more fun to write things up using the intuitive Notion f
 
 A quick google search led me to a React library called [react-notion-x](https://github.com/NotionX/react-notion-x). This library would do most of the heavy lifting and allow me to concentrate in writing up pages in Notion itself. I can then fetch and render them as React components on my app!
 
-> 🤫 In the spirit of DRY (Don't Repeat Yourself), I won't be going through the entire implementation process step by step, as this has already been well documented. Instead, I'll be outlining the important bits and considerations that I came across when working.
+> [!info] In the spirit of DRY (Don't Repeat Yourself), I won't be going through the entire implementation process step by step, as this has already been well documented. Instead, I'll be outlining the important bits and considerations that I came across when working.
 
 **Before we start, it should be noted that the pages you wish to render should be published to the web. You can do this by opening the Notion page you wish to publish, and activating Share → Share to Web. If you don't do this, you'll have to get an access token and pass that to the component we'll be using. I'm not gonna cover that in this writeup though.**
 
@@ -125,23 +126,23 @@ In the page component itself, I use the `NotionRenderer` component to render my 
 
 - **mapPageUrl** *(url) ⇒ string*
 
-- When you click on links within the rendered Notion page that go to other Notion pages, the new page ID will be appended onto your current URL. This prop allows us to alter the format of the new URL. In my case, the new page IDs from this page correspond to blog posts! I choose to prepend the new page IDs with `/blog/` so that the Next.js routing can pick it up and I can render the blog post from there 😎
+	- When you click on links within the rendered Notion page that go to other Notion pages, the new page ID will be appended onto your current URL. This prop allows us to alter the format of the new URL. In my case, the new page IDs from this page correspond to blog posts! I choose to prepend the new page IDs with `/blog/` so that the Next.js routing can pick it up and I can render the blog post from there 😎
 
 - **recordMap** *Object*
 
-- The result of the `NotionRenderer.getPage()` function call. Think of it like a blueprint of the Notion page that tells the component how to render it!
+	- The result of the `NotionRenderer.getPage()` function call. Think of it like a blueprint of the Notion page that tells the component how to render it!
 
 - **fullPage** *Boolean*
 
-- Whether or not to render the page icon and header image, if any.
+	- Whether or not to render the page icon and header image, if any.
 
 - **darkMode** *Boolean*
 
-- Whether or not the page should render in Notion dark mode.
+	- Whether or not the page should render in Notion dark mode.
 
 - **components** *Object*
 
-- We use this prop to pass in components and overrides to the `NotionRenderer`. Notice that I pass in `Collection` and `CollectionRow`, which give the component the ability to render Notion collections. I also pass in a function to override `pageLink` . When I do this, I am converting the Notion links that are being rendered into Next.js `Link` components, which makes intra-site navigation much smoother and easier to deal with!
+	- We use this prop to pass in components and overrides to the `NotionRenderer`. Notice that I pass in `Collection` and `CollectionRow`, which give the component the ability to render Notion collections. I also pass in a function to override `pageLink` . When I do this, I am converting the Notion links that are being rendered into Next.js `Link` components, which makes intra-site navigation much smoother and easier to deal with!
 
 With these concepts in mind, you should be able to render any Notion page you like! Updating the content of the page is as simple as editing the page directly in Notion; your changes will take effect almost instantaneously.
 
