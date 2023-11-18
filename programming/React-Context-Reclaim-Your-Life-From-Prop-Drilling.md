@@ -2,7 +2,7 @@
 slug: programming/React-Context-Reclaim-Your-Life-From-Prop-Drilling
 created_at: 2023-11-18 10:01
 is_template: "0"
-featured_image: 
+featured_image: img/React-Context-Reclaim-Your-Life-From-Prop-Drilling/featured-image.jpg
 title: "React Context: Reclaim Your Life From Prop Drilling Now!"
 ---
 No- it's not what backstage production crews do to make set pieces for your favourite musical. Prop drilling is a problem that basically every React developer has encountered, or WILL encounter, at least once in their career. In this post, I'll go through what prop drilling is, and how we can mitigate it using [React Context](https://reactjs.org/docs/context.html). We'll also touch on some drawbacks of Context, and some caveats to know when using it.
